@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EC SOFT IQ — Sınav Hazırlık, Spor ve Finans Uygulamaları</title>
+<meta name="description" content="EC SOFT — EhliyetIQ, SRC IQ, SPL IQ serisi, Bankacı Terfi, Futbolcu Antrenman Takip, Futbolcu Takip, Not Defterim ve daha fazlası. Sınav hazırlık, spor, finans ve verimlilik alanında Android uygulamaları. Her uygulamada 10 dakikalık ücretsiz deneme.">
+<link rel="canonical" href="https://ecsoftiq.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EC SOFT">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="EC SOFT IQ — Akıllı Mobil Uygulamalar">
+<meta property="og:description" content="Daha iyi bir gelecek için teknoloji. Ehliyet, SPL lisanslama ve banka sınavı hazırlığı, antrenman takibi ve finans araçları.">
+<meta property="og:url" content="https://ecsoftiq.com/">
+<meta property="og:image" content="https://ecsoftiq.com/img/ecsoft-logo.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="EC SOFT IQ — Akıllı Mobil Uygulamalar">
+<meta name="twitter:description" content="Ehliyet, SPL lisanslama ve banka sınavı hazırlığı, antrenman takibi ve finans araçları.">
+<meta name="twitter:image" content="https://ecsoftiq.com/img/ecsoft-logo.webp">
+<meta name="theme-color" content="#060b1a">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060b1a; --card:#0d1838; --card2:#111f47;
+  --line:rgba(120,170,255,.14); --text:#e8eefc; --muted:#93a3c7;
+  --cyan:#22d3ee; --blue:#2f86f0; --violet:#8b5cf6; --green:#34d399; --amber:#fbbf24;
+  --radius:20px;
+  --display:Sora,Inter,system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+h1,h2,h3,.brand{font-family:var(--display);letter-spacing:-.02em}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+.glow{position:fixed;inset:0;pointer-events:none;z-index:-1;
+  background:
+   radial-gradient(600px 400px at 85% -5%,rgba(34,211,238,.18),transparent 70%),
+   radial-gradient(700px 500px at -10% 30%,rgba(47,134,240,.16),transparent 70%),
+   radial-gradient(600px 500px at 60% 110%,rgba(139,92,246,.14),transparent 70%)}
+.grid-bg{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.35;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:56px 56px;mask-image:radial-gradient(ellipse at 50% 0%,#000 30%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 50% 0%,#000 30%,transparent 75%)}
+
+/* üst menü */
+header{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(6,11,26,.75);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.12rem}
+.brand img{height:30px;width:auto}
+.brand small{font-weight:700;color:var(--cyan);font-size:.72rem;letter-spacing:.14em}
+.links{display:flex;gap:28px;font-size:.93rem;color:var(--muted)}
+.links a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:600;font-size:.95rem;border:1px solid transparent;transition:.2s;cursor:pointer;font-family:inherit}
+.btn-primary{background:linear-gradient(135deg,var(--cyan),var(--blue));color:#04101f;box-shadow:0 8px 30px rgba(34,211,238,.28)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(34,211,238,.4)}
+.btn-ghost{border-color:var(--line);background:rgba(255,255,255,.03);color:var(--text)}
+.btn-ghost:hover{border-color:rgba(34,211,238,.5)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:10px;width:42px;height:42px;font-size:1.2rem;cursor:pointer}
+
+/* hero */
+.hero{padding-top:84px;padding-bottom:64px;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;border:1px solid rgba(34,211,238,.35);background:rgba(34,211,238,.07);color:var(--cyan);font-size:.82rem;font-weight:600}
+.pill i{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+.hero h1{font-size:clamp(2.2rem,5.2vw,3.8rem);line-height:1.08;margin:20px 0 18px;font-weight:800}
+.grad{background:linear-gradient(90deg,var(--cyan),var(--blue) 55%,var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);font-size:1.1rem;max-width:540px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.stats{display:flex;gap:36px;margin-top:40px;flex-wrap:wrap}
+.stat b{display:block;font-family:var(--display);font-size:1.8rem;font-weight:800;line-height:1.2}
+.stat span{color:var(--muted);font-size:.86rem}
+
+/* telefon çerçevesi */
+.phone{border-radius:34px;padding:8px;background:linear-gradient(160deg,#22356b,#0a1330);border:1px solid rgba(120,170,255,.28);box-shadow:0 30px 70px rgba(0,0,0,.55),0 0 50px rgba(34,211,238,.1)}
+.phone img{border-radius:27px;width:100%;aspect-ratio:390/844;object-fit:cover;background:#0b1838}
+.phone-stage{position:relative;height:560px}
+.phone-stage .phone{position:absolute;width:232px;top:50%;left:50%}
+.phone-stage .p1{transform:translate(-50%,-50%);z-index:3}
+.phone-stage .p2{transform:translate(-118%,-46%) rotate(-8deg) scale(.86);z-index:2;opacity:.85}
+.phone-stage .p3{transform:translate(18%,-46%) rotate(8deg) scale(.86);z-index:2;opacity:.85}
+.float-badge{position:absolute;z-index:4;padding:10px 14px;border-radius:14px;background:rgba(13,24,56,.94);border:1px solid var(--line);font-size:.8rem;box-shadow:0 12px 30px rgba(0,0,0,.4);animation:float 5s ease-in-out infinite;white-space:nowrap}
+.float-badge b{color:var(--green)}
+@keyframes float{50%{transform:translateY(-10px)}}
+
+/* bölümler */
+section{padding:84px 0}
+.sec-head{text-align:center;max-width:680px;margin:0 auto 40px}
+.eyebrow{color:var(--cyan);font-weight:600;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase}
+.sec-head h2{font-size:clamp(1.8rem,3.6vw,2.6rem);margin:10px 0 12px}
+.sec-head p{color:var(--muted)}
+
+.filters{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:34px}
+.chip{padding:9px 18px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--muted);font-size:.9rem;font-weight:500;cursor:pointer;transition:.2s;font-family:inherit}
+.chip:hover{color:var(--text)}
+.chip.on{background:linear-gradient(135deg,rgba(34,211,238,.18),rgba(47,134,240,.18));border-color:rgba(34,211,238,.55);color:var(--text)}
+
+/* ürün kartları */
+.products{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.prod{position:relative;border-radius:24px;background:linear-gradient(180deg,var(--card),rgba(13,24,56,.55));border:1px solid var(--line);padding:28px;display:grid;gap:26px;transition:.25s}
+.prod:hover{border-color:rgba(34,211,238,.35)}
+.prod.wide{grid-column:1/-1;grid-template-columns:1.1fr .9fr;align-items:center}
+.prod.hide{display:none}
+.prod-head{display:flex;gap:16px;align-items:center;margin-bottom:14px}
+.app-icon{width:64px;height:64px;border-radius:16px;flex:none;box-shadow:0 10px 26px rgba(0,0,0,.4)}
+.prod h3{font-size:1.4rem;line-height:1.2}
+.tag{font-size:.82rem;color:var(--cyan);font-weight:600}
+.prod p{color:var(--muted);font-size:.95rem}
+.feats{list-style:none;margin:16px 0 0;display:flex;flex-wrap:wrap;gap:7px}
+.feats li{font-size:.78rem;padding:5px 11px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid var(--line)}
+.shots{display:flex;gap:14px;justify-content:center}
+.shots .phone{width:46%;max-width:210px;cursor:zoom-in;padding:6px;border-radius:28px;transition:.25s}
+.shots .phone img{border-radius:22px}
+.shots .phone:hover{transform:translateY(-4px)}
+.shots .phone:nth-child(2){margin-top:28px}
+.shots .phone:only-child{width:62%;max-width:230px}
+.prod-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding-top:16px;margin-top:18px;border-top:1px solid var(--line)}
+.status{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:600;color:var(--amber)}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--amber)}
+.store{font-size:.82rem;color:var(--muted)}
+.ribbon{position:absolute;top:18px;right:18px;font-size:.7rem;font-weight:700;letter-spacing:.08em;padding:4px 10px;border-radius:999px;background:linear-gradient(135deg,var(--cyan),var(--blue));color:#04101f}
+.note{font-size:.76rem!important;color:#6f7fa6!important;margin-top:12px}
+
+/* seri listesi */
+.series{display:grid;gap:8px;margin-top:18px}
+.series-item{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:14px;background:rgba(255,255,255,.035);border:1px solid var(--line);cursor:pointer;transition:.2s;text-align:left;color:inherit;font-family:inherit;width:100%}
+.series-item:hover,.series-item.on{border-color:rgba(34,211,238,.5);background:rgba(34,211,238,.07)}
+.series-item img{width:40px;height:40px;border-radius:10px;flex:none}
+.series-item b{display:block;font-size:.92rem;font-family:var(--display)}
+.series-item span{font-size:.78rem;color:var(--muted)}
+.series-item em{margin-left:auto;font-style:normal;font-size:.75rem;color:var(--cyan);font-weight:600;white-space:nowrap}
+
+/* küçük proje şeridi */
+.mini{display:flex;align-items:center;gap:14px;margin:26px auto 0;max-width:640px;padding:14px 18px;border-radius:18px;border:1px dashed var(--line);background:rgba(255,255,255,.02)}
+.mini img.app-icon{width:44px;height:44px;border-radius:12px}
+.mini b{font-family:var(--display);font-size:.98rem}
+.mini p{font-size:.84rem;color:var(--muted)}
+.mini .thumb{margin-left:auto;width:44px;flex:none;cursor:zoom-in;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+.mini.hide{display:none}
+
+/* galeri */
+.gallery{display:flex;gap:18px;max-width:1180px;margin:0 auto;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 20px 26px;scrollbar-width:thin;scrollbar-color:rgba(34,211,238,.4) transparent}
+.gallery figure{flex:0 0 200px;scroll-snap-align:center;margin:0}
+.gallery .phone{padding:6px;border-radius:28px;cursor:zoom-in;transition:.25s}
+.gallery .phone:hover{transform:translateY(-4px)}
+.gallery .phone img{border-radius:22px}
+.gallery figcaption{text-align:center;font-size:.8rem;color:var(--muted);margin-top:10px}
+
+/* neden */
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.why>div{padding:24px;border-radius:var(--radius);background:var(--card);border:1px solid var(--line)}
+.why .ico{font-size:1.6rem;margin-bottom:10px}
+.why h3{font-size:1.02rem;margin-bottom:6px}
+.why p{color:var(--muted);font-size:.9rem}
+
+/* hakkında */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.about p{color:var(--muted);margin-bottom:14px}
+.about h2{font-size:clamp(1.8rem,3.4vw,2.4rem);margin:10px 0 16px}
+.about-logo{display:flex;flex-direction:column;align-items:center;gap:22px;padding:40px;border-radius:28px;background:radial-gradient(circle at 50% 30%,rgba(34,211,238,.14),transparent 70%),var(--card);border:1px solid var(--line)}
+.about-logo img{width:min(320px,80%)}
+.about-logo span{color:var(--muted);font-size:.95rem;font-style:italic}
+
+/* iletişim */
+.contact{border-radius:28px;padding:56px;text-align:center;background:linear-gradient(135deg,rgba(34,211,238,.14),rgba(47,134,240,.12) 50%,rgba(139,92,246,.14));border:1px solid rgba(34,211,238,.3)}
+.contact h2{font-size:clamp(1.8rem,3.6vw,2.6rem);margin-bottom:12px}
+.contact p{color:var(--muted);max-width:560px;margin:0 auto 26px}
+.contact-lines{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:26px}
+.mail{font-family:var(--display);font-size:clamp(1.2rem,3vw,1.7rem);font-weight:700;border-bottom:2px solid rgba(34,211,238,.5)}
+
+.legal{max-width:820px;margin:0 auto;padding:32px;border-radius:var(--radius);background:var(--card);border:1px solid var(--line)}
+.legal h3{font-size:1.05rem;margin:18px 0 6px}
+.legal p,.legal li{color:var(--muted);font-size:.93rem}
+.legal ul{padding-left:20px}
+.legal a{color:var(--cyan)}
+
+footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-size:.88rem}
+.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+.foot .links{gap:20px;display:flex;flex-wrap:wrap}
+
+/* büyütme */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(3,6,15,.9);display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(6px)}
+.lb.open{display:flex}
+.lb img{max-height:88vh;width:auto;border-radius:26px;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.lb button{position:absolute;top:18px;right:18px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--text);font-size:1.2rem;cursor:pointer}
+
+.reveal{opacity:0;transform:translateY(24px);transition:.7s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:980px){
+  .hero{grid-template-columns:1fr;padding-top:56px;text-align:center}
+  .hero p{margin:0 auto}.cta,.stats{justify-content:center}
+  .phone-stage{height:500px}
+  .products{grid-template-columns:1fr}
+  .prod.wide{grid-template-columns:1fr}
+  .why{grid-template-columns:repeat(2,1fr)}
+  .about{grid-template-columns:1fr}
+}
+@media(max-width:720px){
+  .links{display:none}.menu-btn{display:block}
+  header.open .links{display:flex;position:absolute;top:70px;left:0;right:0;flex-direction:column;gap:0;background:#08112a;border-bottom:1px solid var(--line)}
+  header.open .links a{padding:16px 20px;border-top:1px solid var(--line)}
+  .nav .btn-primary{display:none}
+  .why{grid-template-columns:1fr}
+  .prod{padding:22px 18px}
+  .contact{padding:36px 20px}
+  section{padding:60px 0}
+  .phone-stage{height:430px}
+  .phone-stage .phone{width:190px}
+  .phone-stage .p2{transform:translate(-100%,-46%) rotate(-8deg) scale(.8)}
+  .phone-stage .p3{transform:translate(0%,-46%) rotate(8deg) scale(.8)}
+  .float-badge{display:none}
+  .stats{gap:24px}
+  .mini .thumb{display:none}
+  .gallery figure{flex-basis:160px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="glow"></div><div class="grid-bg"></div>
+
+<header id="top">
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="EC SOFT ana sayfa">
+      <img src="img/ecsoft-mark.webp" alt="" width="70" height="30">
+      EC SOFT <small>IQ</small>
+    </a>
+    <nav class="links" id="links">
+      <a href="#uygulamalar">Uygulamalar</a>
+      <a href="#ekranlar">Ekranlar</a>
+      <a href="#hakkinda">Hakkında</a>
+      <a href="#gizlilik">Gizlilik</a>
+      <a href="#iletisim">İletişim</a>
+    </nav>
+    <a href="#iletisim" class="btn btn-primary">Bize Ulaşın</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Menü">☰</button>
+  </div>
+</header>
+
+<main>
+<div class="wrap hero">
+  <div>
+    <span class="pill"><i></i> Daha iyi bir gelecek için teknoloji</span>
+    <a href="#futbolcu" class="pill" style="margin-left:6px;border-color:rgba(52,211,153,.45);background:rgba(52,211,153,.08);color:#34d399;text-decoration:none">Yeni: Futbolcu Antrenman Takip satışta →</a>
+    <a href="#spl" class="pill" style="margin-left:6px;border-color:rgba(53,224,255,.45);background:rgba(53,224,255,.08);color:#35E0FF;text-decoration:none">Yeni: SPL IQ serisi · 5 lisans →</a>
+    <h1>Sınavlara <span class="grad">akıllı</span> hazırlık, sahaya ve finansa net bakış</h1>
+    <p>EC SOFT; ehliyet, SPL lisanslama ve banka görevde yükselme sınavlarına hazırlık uygulamalarıyla spor, finans ve verimlilik araçları geliştirir. Hepsi aynı özenle: gerçek sınav düzeni, sade arayüz, hızlı deneyim.</p>
+    <div class="cta">
+      <a href="#uygulamalar" class="btn btn-primary">Uygulamaları Keşfet →</a>
+      <a href="#iletisim" class="btn btn-ghost">İletişime Geç</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b data-count="12">12</b><span>uygulama</span></div>
+      <div class="stat"><b data-count="11">11</b><span>satışta</span></div>
+      <div class="stat"><b>Android</b><span>platform</span></div>
+    </div>
+  </div>
+
+  <div class="phone-stage" aria-hidden="true">
+    <div class="phone p2"><img src="img/ss-spl1-1.webp" alt=""></div>
+    <div class="phone p3"><img src="img/ss-bankaciterfi-1.webp" alt=""></div>
+    <div class="phone p1"><img src="img/ss-ehliyetiq-1.webp" alt=""></div>
+    <div class="float-badge" style="top:70px;right:0">Gerçek sınav düzeni · <b>birebir</b></div>
+    <div class="float-badge" style="bottom:80px;left:0;animation-delay:1.5s">11 uygulama · <b>satışta</b></div>
+  </div>
+</div>
+
+<section id="uygulamalar">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Uygulamalarımız</span>
+      <h2>Her hedefe bir <span class="grad">IQ</span></h2>
+      <p>Aynı tasarım dili ve sınav altyapısıyla geliştirilen uygulama ailemiz. Ekran görüntülerine dokunarak büyütebilirsiniz.</p>
+    </div>
+
+    <div class="filters">
+      <button class="chip on" data-f="all">Tümü</button>
+      <button class="chip" data-f="ehliyet">Ehliyet ve SRC</button>
+      <button class="chip" data-f="spl">SPL Lisanslama</button>
+      <button class="chip" data-f="banka">Banka Sınavları</button>
+      <button class="chip" data-f="finans">Finans ve Verimlilik</button>
+      <button class="chip" data-f="spor">Spor</button>
+    </div>
+
+    <div class="products">
+
+      <!-- EhliyetIQ -->
+      <article class="prod wide reveal" data-c="ehliyet">
+        <span class="ribbon">ÖNE ÇIKAN</span>
+        <div>
+          <div class="prod-head">
+            <img class="app-icon" src="img/icon-ehliyetiq.webp" alt="EhliyetIQ simgesi">
+            <div><h3>EhliyetIQ</h3><div class="tag">Ehliyet sınavına akıllı hazırlık</div></div>
+          </div>
+          <p>MTSK teorik e-Sınavına gerçek sınavdaki gibi hazırlanın: 2.200+ açıklamalı soru, 50 soru / 45 dakikalık birebir e-Sınav provası, 68 konuluk sesli dersler, trafik ve polis işaretleri ve kişisel sınav koçu. Soruyu çözdüğünüz anda doğrusu, nedeni ve kaynağı açılır.</p>
+          <ul class="feats"><li>Çözerken öğren: açıklama ve kaynak</li><li>e-Sınav provası 50 soru / 45 dk</li><li>350+ görselli soru</li><li>Sesli Dersler (68 konu)</li><li>EhliyetIQ KOCUM</li><li>Tüm sınıflar: B, A, C, D…</li></ul>
+          <p class="note">Bağımsız bir çalışma uygulamasıdır; MEB ya da Emniyet Genel Müdürlüğü'nün resmî uygulaması değildir.</p>
+          <div class="prod-foot"><span class="status" style="color:#34d399"><i style="background:#34d399"></i>Satışta · Android</span><a class="store" href="ehliyetiq/" style="color:var(--cyan);font-weight:600">ecsoftiq.com/ehliyetiq →</a></div>
+          <div class="cta" style="margin-top:16px">
+            <a class="btn btn-ghost" href="ehliyetiq/">Ücretsiz Dene · 10 dk</a>
+            <a class="btn btn-primary" href="https://www.shopier.com/51398044" rel="noopener">Satın Al · ₺199</a>
+          </div>
+        </div>
+        <div class="shots">
+          <div class="phone"><img src="img/ss-ehliyetiq-1.webp" alt="EhliyetIQ ana ekranı" loading="lazy"></div>
+          <div class="phone"><img src="img/ss-ehliyetiq-2.webp" alt="EhliyetIQ soru ve açıklama" loading="lazy"></div>
+        </div>
+      </article>
+
+      <!-- SRC IQ -->
+      <article class="prod wide reveal" data-c="ehliyet" id="srciq">
+        <span class="ribbon">YENİ</span>
+        <div>
+          <div class="prod-head">
+            <img class="app-icon" src="img/icon-srciq.webp" alt="SRC IQ simgesi">
+            <div><h3>SRC IQ</h3><div class="tag">SRC mesleki yeterlilik sınavına akıllı hazırlık</div></div>
+          </div>
+          <p>Profesyonel sürücü belgesi sınavına gerçek sınav düzeninde hazırlanın: <b style="color:var(--text)">2.250 açıklamalı soru</b>, 40 soru / 45 dakikalık birebir prova, 12 dersin konu anlatımı, 128 bilgi kartı ve 409 terimlik sözlük. SRC1'den SRC5'e (ADR) kadar beş belge türü tek uygulamada.</p>
+          <div class="series">
+            <div class="series-item" style="cursor:default"><div><b>SRC1 · Uluslararası Yolcu</b><span>Yurt dışı otobüs seferleri dahil</span></div><em>1.588 soru</em></div>
+            <div class="series-item" style="cursor:default"><div><b>SRC2 · Yurt İçi Yolcu</b><span>Şehirlerarası, şehir içi ve servis</span></div><em>1.438 soru</em></div>
+            <div class="series-item" style="cursor:default"><div><b>SRC3 · Uluslararası Eşya-Kargo</b><span>TIR, CMR ve gümrük işlemleri</span></div><em>1.696 soru</em></div>
+            <div class="series-item" style="cursor:default"><div><b>SRC4 · Yurt İçi Eşya-Kargo</b><span>Kamyon, tır ve kargo araçları</span></div><em>1.475 soru</em></div>
+            <div class="series-item" style="cursor:default"><div><b>SRC5 · Tehlikeli Madde (ADR)</b><span>Temel · Tanker · Sınıf 1 · Sınıf 7</span></div><em>330 soru</em></div>
+          </div>
+          <ul class="feats"><li>Çözerken öğren: açıklama ve mevzuat kaynağı</li><li>Temel / Orta / İleri / Karma</li><li>SRC IQ KOÇUM</li><li>Yanlışlarım ve zayıf konular</li><li>Akıllı plan</li><li>İşitme engelli modu</li></ul>
+          <p class="note">Bağımsız bir çalışma uygulamasıdır; MEB ya da Ulaştırma ve Altyapı Bakanlığı'nın resmî uygulaması değildir.</p>
+          <div class="prod-foot"><span class="status" style="color:#34d399"><i style="background:#34d399"></i>Satışta · Android</span><a class="store" href="src-iq/" style="color:var(--cyan);font-weight:600">ecsoftiq.com/src-iq →</a></div>
+          <div class="cta" style="margin-top:16px">
+            <a class="btn btn-ghost" href="src-iq/">Ücretsiz Dene · 10 dk</a>
+            <a class="btn btn-primary" href="https://www.shopier.com/51486280" rel="noopener">Satın Al · ₺199</a>
+          </div>
+        </div>
+        <div class="shots">
+          <div class="phone"><img src="img/ss-srciq-1.webp" alt="SRC IQ ana ekranı" loading="lazy"></div>
+          <div class="phone"><img src="img/ss-srciq-2.webp" alt="SRC IQ sınav merkezi" loading="lazy"></div>
+        </div>
+      </article>
+
+      <!-- SPL IQ serisi -->
+      <article class="prod wide reveal" data-c="spl" id="spl">
+        <div>
+          <div class="prod-head">
+            <img class="app-icon" src="img/icon-spl1.webp" alt="SPL IQ simgesi" data-series-icon>
+            <div><h3>SPL IQ Serisi</h3><div class="tag">SPL lisanslama sınavlarına akıllı hazırlık</div></div>
+          </div>
+          <p>Sermaye piyasası lisans sınavları için her lisansa ayrı uygulama. Ders bazlı konu çalışması, her ders için 25 soruluk 5 şıklı denemeler; sayaç, işaretleme ve soru gezgini ile gerçek sınav provası.</p>
+          <div class="series" data-group="spl">
+            <button class="series-item on" data-shot1="ss-spl1-1" data-shot2="ss-spl1-2" data-icon="icon-spl1" data-page="spl-duzey1/"><img src="img/icon-spl1.webp" alt=""><div><b>SPL IQ Düzey 1</b><span>1001 · 1003 · 1005 · 1012</span></div><em>4 ders</em></button>
+            <button class="series-item" data-shot1="ss-spl2-1" data-shot2="ss-spl2-2" data-icon="icon-spl2" data-page="spl-duzey2/"><img src="img/icon-spl2.webp" alt=""><div><b>SPL IQ Düzey 2</b><span>Geniş kapsamlı mevzuattan finansal raporlamaya</span></div><em>9 ders</em></button>
+            <button class="series-item" data-shot1="ss-spl3-1" data-shot2="ss-spl3-2" data-icon="icon-spl3" data-page="spl-duzey3/"><img src="img/icon-spl3.webp" alt=""><div><b>SPL IQ Düzey 3</b><span>Genel ekonomi, değerleme ve vergilendirme dahil</span></div><em>12 ders</em></button>
+            <button class="series-item" data-shot1="ss-splgd-1" data-shot2="ss-splgd-2" data-icon="icon-splgd" data-page="spl-gayrimenkul/"><img src="img/icon-splgd.webp" alt=""><div><b>SPL IQ Gayrimenkul Değerleme</b><span>1001 · 1014 · 1015 · 1019</span></div><em>4 ders</em></button>
+            <button class="series-item" data-shot1="ss-splkd-1" data-shot2="ss-splkd-2" data-icon="icon-splkd" data-page="spl-konut/"><img src="img/icon-splkd.webp" alt=""><div><b>SPL IQ Konut Değerleme</b><span>1001 · 1014</span></div><em>2 ders</em></button>
+          </div>
+          <p class="note">Bağımsız bir çalışma uygulamasıdır; SPL, SPK veya TSPB'nin resmî uygulaması değildir.</p>
+          <div class="prod-foot"><span class="status" style="color:#34d399"><i style="background:#34d399"></i>Satışta · Android</span><a class="store" href="spl-duzey1/" style="color:var(--cyan);font-weight:600" data-spl-link>ecsoftiq.com/spl-duzey1 →</a></div>
+          <div class="cta" style="margin-top:16px">
+            <a class="btn btn-ghost" href="spl-duzey1/" data-spl-try>Ücretsiz Dene · 10 dk</a>
+            <a class="btn btn-primary" href="spl-duzey1/" data-spl-buy>Satın Al · ₺490</a>
+          </div>
+        </div>
+        <div class="shots">
+          <div class="phone"><img src="img/ss-spl1-1.webp" alt="SPL IQ açılış ekranı" loading="lazy" data-s1></div>
+          <div class="phone"><img src="img/ss-spl1-2.webp" alt="SPL IQ ders listesi" loading="lazy" data-s2></div>
+        </div>
+      </article>
+
+      <!-- Bankacı Terfi -->
+      <article class="prod wide reveal" data-c="banka" id="banka">
+        <span class="ribbon">YENİ</span>
+        <div>
+          <div class="prod-head">
+            <img class="app-icon" src="img/icon-bankaciterfi.webp" alt="Bankacı Terfi simgesi">
+            <div><h3>Bankacı Terfi</h3><div class="tag">Banka görevde yükselme sınavına tek uygulamada hazırlık</div></div>
+          </div>
+          <p>Görevde yükselme sınavı uygulamalarımızı tek çatı altında topladık. <b style="color:var(--text)">10.000+ soruluk havuzdan</b> her denemede yeniden seçilen 100 soru, 100 dakikalık gerçek Genel Sınav düzeni ve 70 puan hedefi. Sorular Temel, Orta ve İleri zorlukta; Karma denemelerle hepsi bir arada.</p>
+          <div class="series">
+            <div class="series-item" style="cursor:default"><div><b>Genel Bankacılık</b><span>28 alt başlık</span></div><em>4.730 soru</em></div>
+            <div class="series-item" style="cursor:default"><div><b>Genel Kültür</b><span>18 alt başlık</span></div><em>3.090 soru</em></div>
+            <div class="series-item" style="cursor:default"><div><b>Genel Yetenek</b><span>Türkçe ve matematik</span></div><em>2.314 soru</em></div>
+            <div class="series-item" style="cursor:default"><div><b>Bankana özel bölüm</b><span>Ziraat • Halkbank • VakıfBank</span></div><em>1.519 soru</em></div>
+          </div>
+          <ul class="feats"><li>Çözerken öğren: her soruda çözüm ve kaynak</li><li>Kişisel sınav koçu</li><li>Genel Sınav 100 soru / 100 dk</li><li>Mini Sınav</li><li>Yanlışlarım</li><li>Sınava Hazır mıyım?</li><li>Bilgi Kartları</li><li>Akıllı Plan</li></ul>
+          <p class="note">Bağımsız bir çalışma uygulamasıdır; hiçbir bankayla resmî bağı yoktur.</p>
+          <div class="prod-foot"><span class="status" style="color:#34d399"><i style="background:#34d399"></i>Satışta · Android</span><a class="store" href="https://bankaciterfi.com" style="color:var(--cyan);font-weight:600">bankaciterfi.com →</a></div>
+          <div class="cta" style="margin-top:16px">
+            <a class="btn btn-ghost" href="https://bankaciterfi.com">Ücretsiz Dene · 60 dk</a>
+            <a class="btn btn-primary" href="https://www.shopier.com/51378641" rel="noopener">Satın Al · ₺490</a>
+          </div>
+        </div>
+        <div class="shots">
+          <div class="phone"><img src="img/ss-bankaciterfi-1.webp" alt="Bankacı Terfi açılış ekranı" loading="lazy"></div>
+          <div class="phone"><img src="img/ss-bankaciterfi-2.webp" alt="Bankacı Terfi soru ekranı" loading="lazy"></div>
+        </div>
+      </article>
+
+      <!-- Futbolcu Antrenman Takip -->
+      <article class="prod wide reveal" data-c="spor" id="futbolcu">
+        <span class="ribbon">YENİ</span>
+        <div>
+          <div class="prod-head">
+            <img class="app-icon" src="img/icon-futbolcu.webp" alt="Futbolcu Antrenman Takip simgesi">
+            <div><h3>Futbolcu Antrenman Takip</h3><div class="tag">Antrenörler için — <b style="color:var(--cyan)">kendi takımının</b> antrenman ve yük takibi</div></div>
+          </div>
+          <p>Antrenman ve maç kayıtlarını, katılımı ve oyuncu gelişimini tek yerde toplayın. Girdiğiniz RPE ve süreden <b style="color:var(--text)">antrenman yükü, monotoni, zorlanma ve ACWR sakatlık riski</b> otomatik hesaplanır; wellness takibi, performans testleri, sakatlık kayıtları ve yazdırılabilir gelişim raporu hazır gelir.</p>
+          <ul class="feats"><li>Antrenman ve maç kaydı</li><li>Yük · monotoni · zorlanma</li><li>ACWR sakatlık riski</li><li>Wellness takibi</li><li>Performans testleri</li><li>Oyuncu gelişim raporu</li><li>Takım kodu ile paylaşım</li><li>İnternetsiz çalışır</li></ul>
+          <p class="note">Göstergeler antrenörün kararına yardımcı olmak içindir; tıbbi teşhis ya da sağlık tavsiyesi değildir.</p>
+          <div class="prod-foot"><span class="status" style="color:#34d399"><i style="background:#34d399"></i>Satışta · Android</span><a class="store" href="futbolcu-takip/" style="color:var(--cyan);font-weight:600">ecsoftiq.com/futbolcu-takip →</a></div>
+          <div class="cta" style="margin-top:16px">
+            <a class="btn btn-ghost" href="futbolcu-takip/">Ücretsiz Dene · 10 dk</a>
+            <a class="btn btn-primary" href="https://www.shopier.com/51484707" rel="noopener">Satın Al · ₺199</a>
+          </div>
+        </div>
+        <div class="shots">
+          <div class="phone"><img src="img/ss-futbolcu-1.webp" alt="Futbolcu Antrenman Takip ana ekranı — takım özeti ve yük grafiği" loading="lazy"></div>
+          <div class="phone"><img src="img/ss-futbolcu-2.webp" alt="Futbolcu Antrenman Takip — yük ve ACWR sakatlık riski ekranı" loading="lazy"></div>
+        </div>
+      </article>
+
+      <!-- Futbolcu Takip (gözlemci) -->
+      <article class="prod wide reveal" data-c="spor" id="ftizleme">
+        <span class="ribbon">YENİ</span>
+        <div>
+          <div class="prod-head">
+            <img class="app-icon" src="img/icon-ftizleme.webp" alt="Futbolcu Takip simgesi">
+            <div><h3>Futbolcu Takip</h3><div class="tag">Menajer ve gözlemciler için — <b style="color:var(--cyan)">başka kulüplerdeki</b> oyuncuları izleme defteri</div></div>
+          </div>
+          <p>İzlediğin her maçtan sonra raporunu yaz: puan ver, gözlemini not et. Uygulama <b style="color:var(--text)">ortalamayı, gelişim grafiğini, form trendini ve kısa listeni senin verdiğin notlardan</b> çıkarır. Hazır oyuncu veritabanı yoktur — uydurma hiçbir sayı göstermez.</p>
+          <ul class="feats"><li>Maç raporu: puan + 5 başlıkta yetenek</li><li>Gelişim grafiği</li><li>Form trendi</li><li>Kısa liste ve durum takibi</li><li>Gözlem notları</li><li>Oyuncu fotoğrafı ve sözleşme bilgisi</li><li>Yedekle / geri yükle</li><li>İnternetsiz çalışır</li></ul>
+          <p class="note">Bu uygulama, Futbolcu Antrenman Takip'ten farklıdır: burada başka kulüplerin oyuncularını izler ve kısa liste yönetirsin.</p>
+          <div class="prod-foot"><span class="status" style="color:#34d399"><i style="background:#34d399"></i>Satışta · Android</span><a class="store" href="futbolcu-izleme/" style="color:var(--cyan);font-weight:600">ecsoftiq.com/futbolcu-izleme →</a></div>
+          <div class="cta" style="margin-top:16px">
+            <a class="btn btn-ghost" href="futbolcu-izleme/">Ücretsiz Dene · 10 dk</a>
+            <a class="btn btn-primary" href="https://www.shopier.com/51493424" rel="noopener">Satın Al · ₺190</a>
+          </div>
+        </div>
+        <div class="shots">
+          <div class="phone"><img src="img/ss-ftizleme-1.webp" alt="Futbolcu Takip ana ekranı" loading="lazy"></div>
+          <div class="phone"><img src="img/ss-ftizleme-2.webp" alt="Futbolcu Takip oyuncu profili" loading="lazy"></div>
+        </div>
+      </article>
+
+      <!-- FINYONIQ -->
+      <article class="prod reveal" data-c="finans">
+        <div>
+          <div class="prod-head">
+            <img class="app-icon" src="img/icon-finyoniq.webp" alt="FINYONIQ simgesi">
+            <div><h3>FINYONIQ</h3><div class="tag">Piyasa verisi ve finansal hesaplama</div></div>
+          </div>
+          <p>Portföy defteri, grafik ekranı, tarihsel fiyat sorgusu, kredi faiz oranları, onlarca hesaplama aracı, finans sözlüğü, akademi ve soru bankası tek uygulamada.</p>
+          <ul class="feats"><li>Portföy</li><li>Hesaplama</li><li>Finans Akademisi</li><li>Soru Bankası</li><li>Günlük Planım</li></ul>
+          <p class="note">Uygulamadaki veriler yalnızca bilgi amaçlıdır, yatırım tavsiyesi değildir.</p>
+          <div class="prod-foot"><span class="status"><i></i>Yakında</span><span class="store">Android · iOS · Windows</span></div>
+        </div>
+        <div class="shots">
+          <div class="phone"><img src="img/ss-finyoniq-1.webp" alt="FINYONIQ menü ekranı" loading="lazy"></div>
+        </div>
+      </article>
+
+      <!-- Not Defterim -->
+      <article class="prod wide reveal" data-c="finans" id="notdefterim">
+        <span class="ribbon">YENİ</span>
+        <div>
+          <div class="prod-head">
+            <img class="app-icon" src="img/icon-notdefterim.webp" alt="Not Defterim simgesi">
+            <div><h3>Not Defterim</h3><div class="tag">Sade, hızlı ve tamamen çevrimdışı not defteri</div></div>
+          </div>
+          <p>Hesap yok, reklam yok, buluta yükleme yok. Uygulama <b style="color:var(--text)">internete hiç bağlanmaz</b>; yazdığınız her şey yalnızca telefonunuzda durur. Bölümler, etiketler, renkler, sabitleme, arşiv ve yapılacaklar listesiyle aradığınız notu saniyede bulursunuz.</p>
+          <ul class="feats"><li>Sınırsız not ve bölüm</li><li>Etiketler ve 7 renk</li><li>Yapılacak kutucukları</li><li>Sabitleme · arşiv · çöp kutusu</li><li>Hızlı arama ve sıralama</li><li>3 tema</li><li>Otomatik kayıt</li><li>Yedekle / geri yükle</li></ul>
+          <p class="note">Bulut yedeklemesi yoktur — notlarınızın telefondan çıkmaması bilerek yapılmış bir tercihtir.</p>
+          <div class="prod-foot"><span class="status" style="color:#34d399"><i style="background:#34d399"></i>Satışta · Android</span><a class="store" href="not-defterim/" style="color:var(--cyan);font-weight:600">ecsoftiq.com/not-defterim →</a></div>
+          <div class="cta" style="margin-top:16px">
+            <a class="btn btn-ghost" href="not-defterim/">Ücretsiz Dene · 10 dk</a>
+            <a class="btn btn-primary" href="https://www.shopier.com/51491780" rel="noopener">Satın Al · ₺90</a>
+          </div>
+        </div>
+        <div class="shots">
+          <div class="phone"><img src="img/ss-notdefterim-1.webp" alt="Not Defterim not listesi" loading="lazy"></div>
+          <div class="phone"><img src="img/ss-notdefterim-2.webp" alt="Not Defterim not düzenleme ekranı" loading="lazy"></div>
+        </div>
+      </article>
+    </div>
+
+  </div>
+</section>
+
+<section id="ekranlar" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Ekranlardan</span>
+      <h2>Tek aile, tek tasarım dili</h2>
+      <p>Uygulamalarımızın gerçek açılış ekranları. Kaydırarak inceleyin.</p>
+    </div>
+  </div>
+  <div class="gallery" id="gallery"></div>
+</section>
+
+<section id="neden">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Yaklaşımımız</span>
+      <h2>Küçük ekip, net ilkeler</h2>
+    </div>
+    <div class="why">
+      <div class="reveal"><div class="ico">🎯</div><h3>Gerçek sınav düzeni</h3><p>Soru dağılımı, süre, sayaç ve işaretleme gerçek sınavdaki gibi. Sınav günü sürpriz olmasın.</p></div>
+      <div class="reveal"><div class="ico">📚</div><h3>Resmî kaynaklar</h3><p>İçerikler resmî müfredat ve mevzuat esas alınarak hazırlanır; yönlendirmeler yalnızca resmî kaynaklara yapılır.</p></div>
+      <div class="reveal"><div class="ico">🔒</div><h3>Önce gizlilik</h3><p>Sınav ilerlemeniz ve notlarınız cihazınızda kalır. İhtiyaç duymadığımız veriyi toplamayız.</p></div>
+      <div class="reveal"><div class="ico">⚡</div><h3>Hızlı ve hafif</h3><p>Zayıf bağlantıda da akıcı çalışan, büyük ölçüde çevrimdışı kullanılabilen uygulamalar.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="hakkinda">
+  <div class="wrap about">
+    <div class="reveal">
+      <span class="eyebrow">Hakkında</span>
+      <h2>EC SOFT kimdir?</h2>
+      <p>EC SOFT, Türkiye'de bağımsız olarak mobil uygulama geliştiren bir yazılım markasıdır. Finans ve eğitim alanındaki deneyimimizi, herkesin kolayca kullanabileceği sade uygulamalara dönüştürüyoruz.</p>
+      <p>Ehliyet sınavına hazırlanan bir adaydan lisans sınavına çalışan bir finans profesyoneline, görevde yükselmeyi hedefleyen bir bankacıdan takımını veriyle yöneten bir antrenöre kadar herkese uygun bir aracımız olsun istiyoruz.</p>
+      <p>Satışta olan tüm uygulamalarımızı önce <b style="color:var(--text)">10 dakika ücretsiz</b> deneyebilirsiniz; beğenirseniz tek seferlik ödemeyle tam sürüme geçersiniz. Abonelik yoktur.</p>
+    </div>
+    <div class="about-logo reveal">
+      <img src="img/ecsoft-logo.webp" alt="EC SOFT logosu" loading="lazy">
+      <span>“Daha iyi bir gelecek için teknoloji”</span>
+    </div>
+  </div>
+</section>
+
+<section id="iletisim">
+  <div class="wrap">
+    <div class="contact reveal">
+      <h2>Bir fikriniz ya da sorunuz mu var?</h2>
+      <p>Uygulamalarımızla ilgili geri bildirim, iş birliği veya destek talepleriniz için bize e-posta gönderin, arayın ya da WhatsApp'tan yazın. En kısa sürede dönüş yaparız.</p>
+      <div class="contact-lines">
+        <a class="mail" href="mailto:info@ecsoftiq.com">info@ecsoftiq.com</a>
+        <a class="mail" href="tel:+905459061405">0545 906 14 05</a>
+      </div>
+      <div class="cta" style="justify-content:center;margin-top:0">
+        <a class="btn btn-primary" href="mailto:info@ecsoftiq.com?subject=EC%20SOFT%20-%20Bilgi%20Talebi">E-posta Gönder</a>
+        <a class="btn btn-ghost" href="tel:+905459061405">📞 Ara</a>
+        <a class="btn btn-ghost" href="https://wa.me/905459061405" target="_blank" rel="noopener">💬 WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gizlilik">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Yasal</span><h2>Gizlilik Politikası</h2></div>
+    <div class="legal reveal">
+      <p>Bu politika, EC SOFT tarafından geliştirilen mobil uygulamalar ve ecsoftiq.com web sitesi için geçerlidir. Her uygulamanın kendi sayfasında, o uygulamaya özel ayrıntılı gizlilik metni ayrıca yer alır:
+        <a href="ehliyetiq/gizlilik.html">EhliyetIQ</a> ·
+        <a href="src-iq/gizlilik.html">SRC IQ</a> ·
+        <a href="spl-duzey1/gizlilik.html">SPL IQ Düzey 1</a> ·
+        <a href="spl-duzey2/gizlilik.html">Düzey 2</a> ·
+        <a href="spl-duzey3/gizlilik.html">Düzey 3</a> ·
+        <a href="spl-gayrimenkul/gizlilik.html">Gayrimenkul Değerleme</a> ·
+        <a href="spl-konut/gizlilik.html">Konut Değerleme</a> ·
+        <a href="futbolcu-takip/gizlilik.html">Futbolcu Antrenman Takip</a> ·
+        <a href="not-defterim/gizlilik.html">Not Defterim</a> ·
+        <a href="futbolcu-izleme/gizlilik.html">Futbolcu Takip</a>
+      </p>
+      <h3>Cihazınızda kalan veriler</h3>
+      <ul>
+        <li>Sınav ilerlemeniz, deneme sonuçlarınız, notlarınız, takım ve oyuncu kayıtlarınız uygulamanın telefonunuzdaki yerel veri tabanında tutulur.</li>
+        <li>Uygulamayı kaldırdığınızda ya da uygulama verisini temizlediğinizde bu veriler de silinir.</li>
+        <li>Uygulamalarımızda reklam ve üçüncü taraf analiz/izleme aracı yoktur; rehberinize, fotoğraflarınıza, kameranıza ve konumunuza erişmezler.</li>
+      </ul>
+      <h3>Sunucuya giden veriler</h3>
+      <p>Satışta olan uygulamalarımız yalnızca aşağıdaki üç durumda sunucumuza (Supabase altyapısı) bağlanır:</p>
+      <ul>
+        <li><b>Ücretsiz deneme süresi:</b> Deneme, uygulama silinip yeniden kurularak sıfırlanmasın diye kullanılan süre, telefonun uygulamaya özel cihaz kimliğiyle birlikte kaydedilir. Bu kayıtta adınız, e-postanız ya da çalışma verileriniz bulunmaz.</li>
+        <li><b>Satın alma doğrulaması:</b> Tam sürümü açarken girdiğiniz e-posta adresi ve sipariş numarası, satın almanın doğrulanması ve cihaz sınırının uygulanması için saklanır.</li>
+        <li><b>İsteğe bağlı paylaşım:</b> Yalnızca siz açarsanız — örneğin Futbolcu Antrenman Takip'teki takım kodu ile antrenörler arası paylaşım — ilgili veriler sunucuda saklanır. Açmadığınız sürece verileriniz telefonunuzdan çıkmaz.</li>
+      </ul>
+      <h3>Ödeme</h3>
+      <p>Tam sürüm satışları <b>Shopier</b> üzerinden yapılır. Ödeme ve kart bilgileri yalnızca Shopier tarafından işlenir; uygulamalarımız ve EC SOFT bu bilgilere erişmez.</p>
+      <h3>Paylaşım ve yurt dışına aktarım</h3>
+      <p>Kişisel verilerinizi satmayız ve reklam amacıyla üçüncü kişilerle paylaşmayız. Kullandığımız hizmet sağlayıcıların (Supabase, Shopier, Cloudflare) sunucuları Türkiye dışında bulunabilir; bu durumda 6698 sayılı Kanunun 9. maddesindeki şartlar uygulanır. Yasal zorunluluk hâlinde veriler yalnızca hukuken gerekli kapsamda yetkili kurumlara aktarılabilir.</p>
+      <h3>Verilerinizin silinmesi</h3>
+      <p>Cihazda saklanan veriler uygulamayı kaldırdığınızda silinir. Sunucudaki kayıtların (deneme sayacı, sipariş/etkinleştirme, açtıysanız paylaşım verisi) silinmesini <a href="mailto:info@ecsoftiq.com">info@ecsoftiq.com</a> adresinden talep edebilir veya <a href="tel:+905459061405">0545 906 14 05</a> numaralı telefondan bize ulaşabilirsiniz. KVKK başvurularında e-postanın konusunu “KVKK / Gizlilik” olarak belirtmeniz işlemi hızlandırır.</p>
+      <h3>Bilgilendirme</h3>
+      <p>Finans uygulamalarımızdaki veriler yalnızca bilgi amaçlıdır ve yatırım tavsiyesi değildir. Spor uygulamalarımızdaki yük, wellness ve sakatlık göstergeleri antrenörün kararına yardımcı olmak içindir; tıbbi teşhis ya da sağlık tavsiyesi değildir. Sınav hazırlık uygulamalarımız bağımsızdır; adı geçen kurum ve kuruluşlarla resmî bir bağlantısı yoktur — SPL IQ serisi SPL, SPK veya TSPB'nin resmî uygulaması değildir, Bankacı Terfi hiçbir bankayla resmî bağı olmayan bağımsız bir çalışma uygulamasıdır.</p>
+      <p style="margin-top:14px;font-size:.82rem">Son güncelleme: 3 Ekim 2026</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="brand" style="font-size:1rem"><img src="img/ecsoft-mark.webp" alt="" width="56" height="24" style="height:24px">EC SOFT <small>IQ</small></div>
+    <nav class="links">
+      <a href="#uygulamalar">Uygulamalar</a>
+      <a href="#gizlilik">Gizlilik</a>
+      <a href="mailto:info@ecsoftiq.com">info@ecsoftiq.com</a>
+      <a href="tel:+905459061405">0545 906 14 05</a>
+    </nav>
+    <div>© <span id="yil">2026</span> EC SOFT · Daha iyi bir gelecek için teknoloji</div>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Ekran görüntüsü"><button aria-label="Kapat">✕</button><img alt=""></div>
+
+<script>
+const hdr=document.querySelector("header");
+document.getElementById("menuBtn").onclick=()=>hdr.classList.toggle("open");
+document.querySelectorAll("#links a").forEach(a=>a.onclick=()=>hdr.classList.remove("open"));
+
+// kategori filtresi
+document.querySelectorAll(".chip").forEach(c=>c.onclick=()=>{
+  document.querySelectorAll(".chip").forEach(x=>x.classList.remove("on"));
+  c.classList.add("on");
+  const f=c.dataset.f;
+  document.querySelectorAll(".prod,.mini").forEach(a=>{a.classList.toggle("hide",f!=="all"&&a.dataset.c!==f);a.classList.add("in")});
+});
+
+// seri içinde uygulama seçimi
+document.querySelectorAll(".series[data-group]").forEach(s=>{
+  const card=s.closest(".prod");
+  s.querySelectorAll(".series-item").forEach(it=>it.onclick=()=>{
+    s.querySelectorAll(".series-item").forEach(x=>x.classList.remove("on"));
+    if(it.dataset.page){const a=s.closest("article");a.querySelectorAll("[data-spl-link],[data-spl-try],[data-spl-buy]").forEach(l=>l.href=it.dataset.page);const ln=a.querySelector("[data-spl-link]");if(ln)ln.textContent="ecsoftiq.com/"+it.dataset.page.replace(/\/$/,"")+" →";}
+    it.classList.add("on");
+    card.querySelector("[data-s1]").src="img/"+it.dataset.shot1+".webp";
+    card.querySelector("[data-s2]").src="img/"+it.dataset.shot2+".webp";
+    card.querySelector("[data-series-icon]").src="img/"+it.dataset.icon+".webp";
+  });
+});
+
+// galeri
+const G=[["ehliyetiq","EhliyetIQ"],["ftizleme","Futbolcu Takip"],["srciq","SRC IQ"],["spl1","SPL IQ Düzey 1"],["spl2","SPL IQ Düzey 2"],["spl3","SPL IQ Düzey 3"],["splgd","Gayrimenkul Değerleme"],["splkd","Konut Değerleme"],["bankaciterfi","Bankacı Terfi"],["finyoniq","FINYONIQ"],["notdefterim","Not Defterim"],["futbolcu","Futbolcu Antrenman Takip"]];
+document.getElementById("gallery").innerHTML=G.map(([k,n])=>`<figure><div class="phone"><img src="img/ss-${k}-1.webp" alt="${n} ekranı" loading="lazy"></div><figcaption>${n}</figcaption></figure>`).join("");
+
+// büyütme
+const lb=document.getElementById("lb"),lbi=lb.querySelector("img");
+document.addEventListener("click",e=>{
+  const t=e.target.closest(".shots .phone,.gallery .phone,.mini .thumb");
+  if(t){const im=t.querySelector("img");lbi.src=im.src;lbi.alt=im.alt;lb.classList.add("open");}
+});
+lb.onclick=e=>{if(e.target!==lbi)lb.classList.remove("open")};
+document.addEventListener("keydown",e=>{if(e.key==="Escape")lb.classList.remove("open")});
+
+// kaydırınca görünme
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+document.getElementById("yil").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
