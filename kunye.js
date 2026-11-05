@@ -30,7 +30,7 @@
     tuzelKisiAdiTR: "ERKAN ÇAVDAROĞLU",       // Türkçe karakterli hâli
     isletmeTuru:    "Şahıs İşletmesi — Sole Proprietorship",
 
-    adresSatir1:    "Bahçelievler Mah. Şenyurt 12. Sk. Burcum Apt. A Blok No: 2 İç Kapı No: 16",
+    adresSatir1:    "",
     adresIlce:      "Merkez",
     adresIl:        "Çorum",
     adresUlke:      "Türkiye",
