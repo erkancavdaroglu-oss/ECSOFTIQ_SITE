@@ -1,0 +1,4 @@
+# Uygulamalardaki "Diğer uygulamalarımız" menüsü bu listeyi okur (uygulama içinden erişim için CORS izni)
+/uygulamalar/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=300

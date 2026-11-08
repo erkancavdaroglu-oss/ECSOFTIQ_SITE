@@ -1,0 +1,56 @@
+{
+  "v": 1,
+  "guncelleme": "2026-11-08",
+  "gruplar": [
+    {
+      "ad": "Sınavlara hazırlık",
+      "uygulamalar": [
+        {"paket": "com.ecsoft.ehliyetiq", "ad": "EhliyetIQ", "alt": "Ehliyet Sınavı 2026", "simge": "ehliyetiq.webp",
+         "aciklama": "Ehliyet e-Sınavına gerçek sınav düzeninde hazırlan: 5.114 açıklamalı soru, 50 soru / 45 dakikalık prova, sesli cep kitabı ve trafik işaretleri."},
+        {"paket": "com.ecsoft.srciq", "ad": "SRC IQ", "alt": "SRC Sınavı 2026", "simge": "srciq.webp",
+         "aciklama": "SRC1'den SRC5'e (ADR) beş belge tek uygulamada: 2.250 açıklamalı soru, birebir sınav provası ve 12 dersin konu anlatımı."},
+        {"paket": "com.ecsoft.spliq", "ad": "SPL IQ", "alt": "SPL Lisans Sınavı 2027", "simge": "spliq.webp",
+         "aciklama": "Beş SPL lisansı tek uygulamada: 3.189 açıklamalı soru, gerçek SPL düzeninde sınav, lisans karnesi ve sesli ders anlatımı."},
+        {"paket": "com.ecsoft.bankaciterfi", "ad": "Bankacı Terfi", "alt": "Yükselme Sınavı", "simge": "bankaciterfi.webp",
+         "aciklama": "Banka görevde yükselme sınavına hazırlık: 11.653 açıklamalı soruluk havuz, 100 soru / 100 dakikalık Genel Sınav ve kişisel sınav koçu."},
+        {"paket": "com.ecsoft.mufettissinavi", "ad": "Müfettiş Yardımcılığı Sınavı", "alt": "Banka müfettiş ve kontrolör yardımcılığı", "simge": "mufettissinavi.webp",
+         "aciklama": "12.000'den fazla açıklamalı soru, 140 soru / 210 dakikalık Genel Deneme, barajlara göre sonuç ve mülakat hazırlığı."},
+        {"paket": "com.ecsoft.bankalaragiris", "ad": "Banka Giriş IQ", "alt": "Banka giriş sınavları", "simge": "bankalaragiris.webp",
+         "aciklama": "Servis görevlisi, memur ve uzman yardımcılığı sınavları: 9 sınav profili, 3.382 açıklamalı soru, ilan formatında tam sınav."}
+      ]
+    },
+    {
+      "ad": "Öğren ve oyna",
+      "uygulamalar": [
+        {"paket": "com.ecsoft.ehliyetoyunlari", "ad": "Yeşil Işık", "alt": "Ehliyet Oyunları", "simge": "ehliyetoyunlari.webp",
+         "aciklama": "Öncelik Kimde?, Hafıza Kartları ve Trafik Refleksi oyunlarıyla trafik kurallarını ve işaretlerini eğlenerek öğren."},
+        {"paket": "com.ecsoft.finansalsozluk", "ad": "Finansal Terimler ve Borsa", "alt": "Sözlük, akademi ve test", "simge": "finansalsozluk.webp",
+         "aciklama": "145 terimlik finans sözlüğü, 91 konu anlatımı, 5 eğitim kitabı ve 1.083 soruluk test bankası; kitapları sesli dinle."},
+        {"paket": "com.ecsoft.borsaokulu", "ad": "Borsa Okulu", "alt": "Sesli Cep Kitabı", "simge": "borsaokulu.webp",
+         "aciklama": "Borsayı sıfırdan öğreten 5 kitap, 49 bölüm. İster oku ister sesli dinle; ayraç kaldığın yeri hatırlar."}
+      ]
+    },
+    {
+      "ad": "Günlük hayat",
+      "uygulamalar": [
+        {"paket": "com.ecsoft.hesaplamalar", "ad": "Hesaplamalar", "alt": "124 Hesap Aracı", "simge": "hesaplamalar.webp",
+         "aciklama": "KDV, kredi, maaş, vergi, tarih ve sağlık: 15 kategoride 124 hesap aracı. İnternet olmadan da çalışır."},
+        {"paket": "com.ecsoft.notdefterim", "ad": "Not Defterim", "alt": "Notlar ve Liste", "simge": "notdefterim.webp",
+         "aciklama": "Sade ve hızlı not defteri: bölümler, etiketler, renkler ve yapılacaklar listesi. Notların yalnız telefonunda kalır."},
+        {"paket": "com.ecsoft.corumadair", "ad": "Çorum'a Dair", "alt": "Çorum Haberleri", "simge": "corumadair.webp",
+         "aciklama": "Çorum haberleri, nöbetçi eczaneler, vefat duyuruları, etkinlikler, hava durumu ve şehir rehberi tek uygulamada."}
+      ]
+    },
+    {
+      "ad": "Spor ve antrenman",
+      "uygulamalar": [
+        {"paket": "com.ecsoft.tabataiq", "ad": "Tabata IQ", "alt": "Antrenman Zamanlayıcısı", "simge": "tabataiq.webp",
+         "aciklama": "Türkçe sesli Tabata, HIIT, boks, EMOM ve AMRAP zamanlayıcısı. Dev sayaçla telefona bakmadan çalış."},
+        {"paket": "com.ecsoft.futbolcuantrenmantakip", "ad": "Futbolcu Antrenman Takip", "alt": "Antrenörler için", "simge": "futbolcuantrenmantakip.webp",
+         "aciklama": "Antrenman ve maç kaydı, katılım, antrenman yükü, ACWR sakatlık riski ve oyuncu gelişim raporu."},
+        {"paket": "com.ecsoft.futbolcutakip", "ad": "Futbolcu Takip", "alt": "Oyuncu İzleme", "simge": "futbolcutakip.webp",
+         "aciklama": "Menajer ve gözlemciler için oyuncu izleme defteri: maç raporu, puan, gelişim grafiği ve kısa liste."}
+      ]
+    }
+  ]
+}
