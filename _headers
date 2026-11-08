@@ -2,3 +2,9 @@
 /uygulamalar/*
   Access-Control-Allow-Origin: *
   Cache-Control: public, max-age=300
+
+# Geçici: Play Console yüklemesi için paket aktarımı (yükleme bitince klasör silinir)
+/yukleme/*
+  Access-Control-Allow-Origin: https://play.google.com
+  Cache-Control: no-store
+  X-Robots-Tag: noindex
