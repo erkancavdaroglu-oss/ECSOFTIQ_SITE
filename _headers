@@ -8,3 +8,8 @@
   Access-Control-Allow-Origin: https://play.google.com
   Cache-Control: no-store
   X-Robots-Tag: noindex
+
+# Vakit IQ: uygulama içinden okunan ayar dosyası (yıllık fitre tutarı)
+/vakitiq/ayar.json
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=3600
