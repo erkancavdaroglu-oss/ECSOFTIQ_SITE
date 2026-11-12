@@ -1,0 +1,11 @@
+{
+  "surum": 1,
+  "aciklama": "FINYONIQ uzaktan yapılandırma (v171 ve sonrası bu dosyayı okur). Bir veri adresini uygulamayı güncellemeden değiştirmek için urls içine yazılır, örn. \"EMTIA_DOVIZ_PROXY_URL\": \"https://...\". Boş bırakılan adresler uygulamaya gömülü hâliyle kalır.",
+  "urls": {},
+  "duyuru": {
+    "metin": "",
+    "seviye": "bilgi",
+    "kimlik": "",
+    "bitis": ""
+  }
+}

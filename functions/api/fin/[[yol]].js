@@ -3,6 +3,9 @@
 // Arka uç bir gün yine taşınırsa yalnız ARKA değişir, uygulamayı güncellemek gerekmez.
 //   örnek: /api/fin/emtia · /api/fin/mode-haber?mode=doviz-anlik · /api/fin/hisse-tarana?periyot=D
 const ARKA = "https://uqkwmrwzcslessuopcrv.supabase.co/functions/v1/fin";
+// Arka ucu başka yerde çalışan uçlar. Banka faizi: kaynak site Supabase ve Cloudflare sunucularını engellediği için
+// şimdilik Val Town'daki val'dan alınıyor (10 Ocak 2027'ye kadar çalışır); kalıcı çözüm bulununca yalnız bu satır değişecek.
+const OZEL_ARKA = { "hisse-banka-faiz": "https://erkancavdaroglu--96756bacad2211f181461607ee4eb77e.web.val.run" };
 const ATILAN_ISTEK = ["host", "cookie", "cf-connecting-ip", "cf-ipcountry", "cf-ray", "cf-visitor", "x-forwarded-for", "x-real-ip"];
 const ATILAN_YANIT = ["x-ec-ct", "x-deno-execution-id", "endpoint-load-metrics", "sb-request-id", "sb-gateway-version", "x-sb-edge-region", "x-served-by", "set-cookie"];
 
@@ -24,7 +27,8 @@ export async function onRequest({ request, params, waitUntil }) {
   for (const k of ATILAN_ISTEK) h.delete(k);
   h.set("x-ec-url", url.toString());
   const govdeli = request.method !== "GET" && request.method !== "HEAD";
-  const y = await fetch(`${ARKA}/${yol}${url.search}`, { method: request.method, headers: h, body: govdeli ? request.body : undefined, redirect: "manual" });
+  const hedef = OZEL_ARKA[yol] ? OZEL_ARKA[yol] + "/" + url.search : `${ARKA}/${yol}${url.search}`;
+  const y = await fetch(hedef, { method: request.method, headers: h, body: govdeli ? request.body : undefined, redirect: "manual" });
   const yh = new Headers(y.headers);
   const tur = yh.get("x-ec-ct");
   if (tur) { yh.set("content-type", tur); yh.delete("content-security-policy"); yh.delete("x-content-type-options"); }
