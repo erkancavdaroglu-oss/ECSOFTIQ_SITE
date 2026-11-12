@@ -28,8 +28,18 @@ export async function onRequest({ request, params, waitUntil }) {
   h.set("x-ec-url", url.toString());
   const govdeli = request.method !== "GET" && request.method !== "HEAD";
   const hedef = OZEL_ARKA[yol] ? OZEL_ARKA[yol] + "/" + url.search : `${ARKA}/${yol}${url.search}`;
-  const y = await fetch(hedef, { method: request.method, headers: h, body: govdeli ? request.body : undefined, redirect: "manual" });
+  // Arka uca ulaşılamazsa (ör. Val Town kapandıktan sonra banka faizi) uygulamaya okunabilir, CORS'lu bir hata döner;
+  // uygulama bunu "veriler şu an alınamadı" diye gösterir.
+  const hata = (durum) => new Response(JSON.stringify({ error: "Veri kaynağına ulaşılamadı" }), { status: durum, headers: { "content-type": "application/json; charset=utf-8", "access-control-allow-origin": "*", "cache-control": "no-store" } });
+  let y;
+  try {
+    y = await fetch(hedef, { method: request.method, headers: h, body: govdeli ? request.body : undefined, redirect: "manual" });
+  } catch (e) {
+    return hata(502);
+  }
+  if (OZEL_ARKA[yol] && y.status >= 400 && !/json/i.test(y.headers.get("content-type") || "")) return hata(502);
   const yh = new Headers(y.headers);
+  if (!yh.has("access-control-allow-origin")) yh.set("access-control-allow-origin", "*");
   const tur = yh.get("x-ec-ct");
   if (tur) { yh.set("content-type", tur); yh.delete("content-security-policy"); yh.delete("x-content-type-options"); }
   for (const k of ATILAN_YANIT) yh.delete(k);
