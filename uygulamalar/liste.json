@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "guncelleme": "2026-11-08",
+  "guncelleme": "2026-11-13",
   "gruplar": [
     {
       "ad": "Sınavlara hazırlık",
@@ -11,6 +11,8 @@
          "aciklama": "SRC1'den SRC5'e (ADR) beş belge tek uygulamada: 2.250 açıklamalı soru, birebir sınav provası ve 12 dersin konu anlatımı."},
         {"paket": "com.ecsoft.spliq", "ad": "SPL IQ", "alt": "SPL Lisans Sınavı 2027", "simge": "spliq.webp",
          "aciklama": "Beş SPL lisansı tek uygulamada: 3.189 açıklamalı soru, gerçek SPL düzeninde sınav, lisans karnesi ve sesli ders anlatımı."},
+        {"paket": "com.ecsoft.isgiq", "ad": "İSG IQ", "alt": "İş Güvenliği Sınavı", "simge": "isgiq.webp",
+         "aciklama": "İş güvenliği uzmanlığı sınavına hazırlık: 5.000 açıklamalı soru, 50 soru / 75 dakikalık gerçek sınav düzeni, sesli ders anlatımı ve 183 bilgi kartı."},
         {"paket": "com.ecsoft.bankaciterfi", "ad": "Bankacı Terfi", "alt": "Yükselme Sınavı", "simge": "bankaciterfi.webp",
          "aciklama": "Banka görevde yükselme sınavına hazırlık: 11.653 açıklamalı soruluk havuz, 100 soru / 100 dakikalık Genel Sınav ve kişisel sınav koçu."},
         {"paket": "com.ecsoft.mufettissinavi", "ad": "Müfettiş Yardımcılığı Sınavı", "alt": "Banka müfettiş ve kontrolör yardımcılığı", "simge": "mufettissinavi.webp",
